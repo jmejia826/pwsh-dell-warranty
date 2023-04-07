@@ -73,8 +73,7 @@ function Main {
     If ($WarrantyInformation.warrantyExpiration) {
         # Add the text data
         Write-Host ("[$(Get-Date)]`tSetting the warranty type as {0}" -f $($WarrantyInformation.warrantyType))
-        Ninja-Property-Set WarrantyType $($WarrantyInformation.warrantyType)
-
+        
         # Format the date values as yyyy-MM-dd
         $ShippingDate = Get-Date $WarrantyInformation.shipDate -Format "yyyy-MM-dd"
         $WarrantyExpiration =  Get-Date $WarrantyInformation.warrantyExpiration -Format "yyyy-MM-dd"
